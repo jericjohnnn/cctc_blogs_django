@@ -58,45 +58,14 @@
         <a href="{% url 'blog-list' %}" class="btn btn-primary">View All Blogs</a>
     </div>
 </div>
-
 <!-- Footer -->
-<footer class="bg-dark text-white py-4 mt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <h5>CCTC Blogs</h5>
-                <p class="text-white">Share your stories, ideas, and thoughts with the world.</p>
-            </div>
-            <div class="col-md-4 mb-3">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="{% url 'home' %}" class="text-white text-decoration-none">Home</a></li>
-                    <li><a href="{% url 'blog-list' %}" class="text-white text-decoration-none">Blogs</a></li>
-                    <li><a href="{% url 'blog-create' %}" class="text-white text-decoration-none">Create Blog</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 mb-3">
-                <h5>Connect With Us</h5>
-                <div class="d-flex gap-3 mt-3">
-                    <a href="#" class="text-decoration-none"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="#" class="text-decoration-none"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="text-decoration-none"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#" class="text-decoration-none"><i class="fab fa-linkedin fa-lg"></i></a>
-                </div>
-            </div>
-        </div>
-        <hr class="my-4">
-        <div class="text-center">
-            <small>&copy; {% now "Y" %} CCTC Blogs. All rights reserved.</small>
-        </div>
-    </div>
-</footer>
+
 {% endblock %}
 
 {% block extra_css %}
 <style>
 .hero-section {
-    background: url('https://placehold.co/1920x600') no-repeat center center;
+    background: url('https://plus.unsplash.com/premium_photo-1684581214880-2043e5bc8b8b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZyUyMGNvdmVyfGVufDB8fDB8fHww') no-repeat center center;
     background-size: cover;
     min-height: 60vh;
 }
