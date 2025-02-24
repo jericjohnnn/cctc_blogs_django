@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Blogs{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 mb-4">
+        <h2>Blog Posts</h2>
+        <a href="{% url 'blog-create' %}" class="btn btn-primary float-end">
+            <i class="fas fa-plus"></i> New Blog
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    {% for blog in blogs %}
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ blog.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">By {{ blog.author }}</h6>
+                <p class="card-text">{{ blog.body|truncatewords:50 }}</p>
+                <div class="text-muted small mb-2">
+                    Created: {{ blog.created_at|date:"F j, Y" }}
+                    {% if blog.updated_at != blog.created_at %}
+                    <br>Updated: {{ blog.updated_at|date:"F j, Y" }}
+                    {% endif %}
+                </div>
+                <div class="btn-group">
+                    <a href="{% url 'blog-update' blog.pk %}" class="btn btn-outline-primary btn-sm">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                    <a href="{% url 'blog-delete' blog.pk %}" class="btn btn-outline-danger btn-sm">
+                        <i class="fas fa-trash"></i> Delete
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">
+            No blog posts yet. <a href="{% url 'blog-create' %}">Create one now!</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 
